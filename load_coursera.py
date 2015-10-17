@@ -36,7 +36,6 @@ def fetch_courses():
 
 	r = requests.get(BASE_URL, params=params)
 	print(r.url)
-	pprint(r.text)
 
 	data = r.json()
 
@@ -141,7 +140,7 @@ def new_student():
 	student['phone'] = fake.phone_number()
 	return student
 
-def generate_fake_students(num=100, d=10):
+def generate_fake_students(num=500, d=17):
 	students = []
 	student_sessions = []
 
@@ -166,7 +165,7 @@ if __name__ == "__main__":
 	insert_mongo(courses, "course")
 	
 
-	students, courses_taken = generate_fake_students(num=100, d=10)
+	students, courses_taken = generate_fake_students()
 	insert_mongo(students, "student")
 	insert_mongo(courses_taken, "course_taken")
 
