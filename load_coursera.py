@@ -107,9 +107,10 @@ def fetch_courses():
 				new_instructors.append(instructor)
 
 
-		course['links']['categories'] = new_categories
-		course['links']['universities'] = new_universities
-		course['links']['instructors'] = new_instructors
+		course['categories'] = new_categories
+		course['universities'] = new_universities
+		course['instructors'] = new_instructors
+		course.pop('links', None)
 
 	return courses, categories, universities, instructors
 
