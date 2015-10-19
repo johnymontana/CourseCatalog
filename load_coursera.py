@@ -50,7 +50,7 @@ def fetch_courses():
 	print(str(len(universities)) + " universities")
 	print(str(len(categories)) + " categories")
 	print(str(len(instructors)) + " instructors")
-	print(str(len(sessions)) + " sessions")
+	#print(str(len(sessions)) + " sessions")
 
 	for c in categories:
 		c['_id'] = "category" + str(c['id'])
@@ -145,6 +145,7 @@ def generate_fake_students(num=500, d=17):
 	students = []
 	student_sessions = []
 
+	print("Inserting " + str(num) + " students with up to " + str(d) + " courses taken per student.")
 	for i in range(num):
 		students.append(new_student())
 	for s in students:
