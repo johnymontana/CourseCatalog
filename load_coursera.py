@@ -14,7 +14,7 @@ Q = 'search'
 QUERY = 'computer science'
 
 # MongoClient
-db = MongoClient('mongodb://localhost:27017')['coursera']
+db = MongoClient('mongodb://localhost:27017')['course_catalog']
 db.drop_collection('course')
 db.drop_collection('category')
 db.drop_collection('session')
@@ -160,7 +160,7 @@ def generate_fake_students(num=500, d=17):
 
 def insert_mongo(docs, collection_name):
 	collection = db[collection_name]
-	collection.insert_many(docs)
+	collection.insert(docs)
 
 if __name__ == "__main__":
 	courses, categories, universities, instructors = fetch_courses()
