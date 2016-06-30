@@ -7,9 +7,15 @@ The script pulls data from the public [Coursera API](https://building.coursera.o
 
 ### MongoDB Schema
 
-#### course
+The script creates several MongoDB collections, such as `course`, `student`, and `course_taken`. 
 
-~~~ JSON
+#### `course` collection
+
+Documents in the `course` collection represent an individual course being offered.
+
+Example:
+
+~~~
 {
 	"_id" : ObjectId("577483b14c3b8252e9902a91"),
 	"faq" : "",
@@ -64,9 +70,13 @@ The script pulls data from the public [Coursera API](https://building.coursera.o
 }
 ~~~
 
-#### student
+#### `student` collection
 
-~~~ JSON
+Documents in this collection represent an individual student. Note that all information is randomly generated.
+
+Example:
+
+~~~
 {
 	"_id" : "44521640-3e6a-11e6-8fbe-acbc327f8c19",
 	"phone" : "(981)155-1619x24427",
@@ -78,9 +88,13 @@ The script pulls data from the public [Coursera API](https://building.coursera.o
 }
 ~~~
 
-#### course_taken
+#### `course_taken` collection
 
-~~~ JSON
+Documents in this collection correspond to a single session of a course taken by a student. This includes the date the course was taken and the grade the student received.
+
+Example:
+
+~~~
 {
 	"_id" : ObjectId("577483b54c3b8252e9902ba3"),
 	"student_id" : "44521640-3e6a-11e6-8fbe-acbc327f8c19",
